@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Etunimi Sukunimi — Osaamisportfolio</title>
+  <style>
+    :root{
+      --accent1:#4B0082; /* tumman liila */
+      --accent2:#1A237E; /* tumman sininen */
+      --bg:#f7f8fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --radius:12px;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{margin:0;background:var(--bg);color:#111;line-height:1.4}
+    .wrap{max-width:920px;margin:40px auto;padding:28px}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:14px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:28px}
+    h1{margin:0;font-size:22px}
+    p.lead{margin:8px 0 0;color:var(--muted)}
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:20px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    .row{display:flex;gap:18px;flex-wrap:wrap}
+    .col{flex:1 1 280px;min-width:220px}
+    .skills .skill{margin-bottom:12px}
+    .skill .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+    .bar{height:10px;background:#e6e9f0;border-radius:999px;margin-top:8px;overflow:hidden}
+    .bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2))}
+    .projects .proj{border-radius:10px;padding:12px;margin-bottom:12px;background:#fbfdff;border:1px solid #eef3ff}
+    .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:var(--accent1);color:white;text-decoration:none;font-weight:600}
+    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:620px){.wrap{padding:18px}}
+    .fade{opacity:0;transform:translateY(6px);animation:fadeIn .5s forwards}
+    @keyframes fadeIn{to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="fade" style="animation-delay:0s">
+      <div class="avatar">ES</div>
+      <div>
+        <h1>Etunimi Sukunimi</h1>
+        <p class="lead">Signaalitekniikka • Johtamisintressi • Tricking-urheilija — etsin kehitys- tai vastuutehtävää</p>
+        <div class="links">
+          <a class="cta" href="#contact">Ota yhteyttä</a>
+          <a class="cta" href="cv.pdf" download>Lataa CV (PDF)</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="card fade" style="animation-delay:0.05s;margin-top:20px">
+      <div class="row">
