@@ -3,52 +3,223 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Etunimi Sukunimi — Osaamisportfolio</title>
+  <title>Etunimi Sukunimi — Portfolio</title>
   <style>
     :root{
       --accent1:#4B0082; /* tumman liila */
       --accent2:#1A237E; /* tumman sininen */
-      --bg:#f7f8fb;
-      --card:#ffffff;
-      --muted:#6b7280;
+      --bg:#000000; /* tumma musta tausta */
+      --card:#1c1c1c; /* hieman vaaleampi korttien tausta */
+      --text:#ffffff; /* valkoinen teksti */
+      --muted:#cccccc; /* vaaleanharmaa pienille teksteille */
       --radius:12px;
       font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    body{margin:0;background:var(--bg);color:#111;line-height:1.4}
-    .wrap{max-width:920px;margin:40px auto;padding:28px}
-    header{display:flex;gap:20px;align-items:center}
-    .avatar{width:96px;height:96px;border-radius:14px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:28px}
-    h1{margin:0;font-size:22px}
-    p.lead{margin:8px 0 0;color:var(--muted)}
-    .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:20px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.4;
+    }
+
+    h1,h2,h3,h4,h5{
+      color:var(--text);
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    a{
+      color:var(--text);
+      text-decoration:none;
+    }
+
+    .wrap{
+      max-width:920px;
+      margin:40px auto;
+      padding:28px;
+    }
+
+    header{
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+
+    .avatar{
+      width:96px;
+      height:96px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--accent1),var(--accent2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:16px;
+      text-align:center;
+      line-height:1.2;
+      padding:4px;
+    }
+
+    p.lead{
+      margin:8px 0 0;
+      color:var(--muted);
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      margin-top:20px;
+      box-shadow:0 6px 18px rgba(16,24,40,0.6);
+    }
+
     .row{display:flex;gap:18px;flex-wrap:wrap}
     .col{flex:1 1 280px;min-width:220px}
+
     .skills .skill{margin-bottom:12px}
     .skill .meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
-    .bar{height:10px;background:#e6e9f0;border-radius:999px;margin-top:8px;overflow:hidden}
+    .bar{height:10px;background:#333;border-radius:999px;margin-top:8px;overflow:hidden}
     .bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2))}
-    .projects .proj{border-radius:10px;padding:12px;margin-bottom:12px;background:#fbfdff;border:1px solid #eef3ff}
-    .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:var(--accent1);color:white;text-decoration:none;font-weight:600}
-    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
-    @media (max-width:620px){.wrap{padding:18px}}
-    .fade{opacity:0;transform:translateY(6px);animation:fadeIn .5s forwards}
-    @keyframes fadeIn{to{opacity:1;transform:none}}
+
+    .projects .proj{
+      border-radius:10px;
+      padding:12px;
+      margin-bottom:12px;
+      background:#2a2a2a;
+      border:1px solid #444;
+    }
+
+    .cta{
+      display:inline-block;
+      margin-top:12px;
+      padding:10px 14px;
+      border-radius:10px;
+      background:var(--accent1);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    footer{
+      margin-top:22px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    @media (max-width:620px){
+      .wrap{padding:18px}
+    }
+
+    .fade{
+      opacity:0;
+      transform:translateY(6px);
+      animation:fadeIn .5s forwards;
+    }
+
+    @keyframes fadeIn{
+      to{opacity:1;transform:none}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <!-- Header -->
     <header class="fade" style="animation-delay:0s">
-      <div class="avatar">ES</div>
+      <div class="avatar">Etunimi<br>Sukunimi</div>
       <div>
-        <h1>Etunimi Sukunimi</h1>
-        <p class="lead">Signaalitekniikka • Johtamisintressi • Tricking-urheilija — etsin kehitys- tai vastuutehtävää</p>
+        <h1>Kai Mankila</h1>
+        <p class="lead">ICT-tukihenkilö • Valmentaja • Tricking-urheilija — etsin viestintätekniikkka alan töitä</p>
         <div class="links">
           <a class="cta" href="#contact">Ota yhteyttä</a>
-          <a class="cta" href="cv.pdf" download>Lataa CV (PDF)</a>
+          <a class="cta" href="cv.pdf.pdf" download>Lataa CV (PDF)</a>
         </div>
       </div>
     </header>
 
+    <!-- Osaaminen -->
     <section class="card fade" style="animation-delay:0.05s;margin-top:20px">
       <div class="row">
+        <div class="col">
+          <h3>Osaaminen</h3>
+          <div class="skills">
+            <div class="skill">
+              <div class="meta"><span>Viestotekniikka</span><span>Erinomainen</span></div>
+              <div class="bar"><i style="width:92%"></i></div>
+            </div>
+            <div class="skill">
+              <div class="meta"><span>Tiimijohtaminen</span><span>Hyvä</span></div>
+              <div class="bar"><i style="width:76%"></i></div>
+            </div>
+            <div class="skill">
+              <div class="meta"><span>Vianetsintä & huolto</span><span>Hyvä</span></div>
+              <div class="bar"><i style="width:80%"></i></div>
+            </div>
+            <div class="skill">
+              <div class="meta"><span>Ohjelmointi / Skriptit</span><span>Perus–Hyvä</span></div>
+              <div class="bar"><i style="width:60%"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <h3>Avainluvut</h3>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li>5+ viikkoa palvelusta signaalijoukoissa — vastuutehtäviä, viestiasennuksia</li>
+            <li>Johtamisharjoituksia / pienryhmän vetäminen / Yksityistunteja</li>
+            <li>Urheilu: kilpailu- ja harjoitustausta (tricking) — kurinalaisuus ja paineensietokyky</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projektit / Muu sisältö -->
+    <section class="card fade projects" style="animation-delay:0.1s">
+      <h3>Projektit & esimerkit</h3>
+
+      <div class="proj">
+        <strong>Viestoyksikön harjoitustoteutus</strong>
+        <p style="margin:6px 0;color:var(--muted)">Laadin ja toteutin viestiasennukseen liittyvän harjoituspaketin (suunnittelu, testaus, palautekierros).</p>
+        <a href="#" onclick="alert('Lisää linkkejä ja kuvia tähän projektiin.');return false">Katso lisätiedot →</a>
+      </div>
+
+      <div class="proj">
+        <strong>Työkaluskripti signaalilaitteisiin</strong>
+        <p style="margin:6px 0;color:var(--muted)">Pieni skripti, joka automatisoi laitemittausten keruun ja raportin luonnin.</p>
+        <a href="#" onclick="alert('Lisää GitHub-linkki tai tiedostot.');return false">Katso koodi →</a>
+      </div>
+
+    
+
+    <!-- Yhteystiedot -->
+    <section class="card fade" id="contact" style="animation-delay:0.15s">
+      <h3>Yhteystiedot</h3>
+      <p style="margin:6px 0;color:var(--muted)">
+        Sähköposti: <strong>kaimankila@gmail.com</strong><br>
+        Puhelin: <strong>0449832044</strong><br>
+        Instagram: kai_tdruiz
+      </p>
+
+      <div style="margin-top:12px">
+        <a class="cta" href="mailto:kaimankila@gmail.com">Lähetä sähköposti</a>
+      </div>
+    </section>
+
+    <footer class="fade" style="animation-delay:0.18s">
+      © <span id="year"></span> Kai Mankila — Helsinki
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
